@@ -1,0 +1,49 @@
+/* Write your CSS here */
+.tab-card-container {
+  background-color: transparent;
+  border-radius: 15px;
+  border-style: solid;
+  border-color: white;
+  padding: 10px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  width: 45%;
+}
+@media (min-width: 768px) {
+  .tab-card-container {
+    padding: 20px;
+  }
+}
+
+.team-img {
+  width: 30px;
+  align-self: center;
+}
+@media (min-width: 768px) {
+  .team-img {
+    width: 100px;
+  }
+}
+
+.heading-team {
+  color: white;
+  font-size: 10px;
+  margin-left: 10px;
+  text-align: center;
+  font-family: Bree Serif;
+  text-decoration: none;
+}
+@media (min-width: 768px) {
+  .heading-team {
+    font-size: 30px;
+    margin-left: 20px;
+  }
+}
+
+.list-card-con {
+  list-style-type: none;
+  width: 100%;
+  display: flex;
+}
+@media (min-width: 768px) {
+}
