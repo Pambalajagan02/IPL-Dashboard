@@ -9,6 +9,8 @@ import LatestMatch from '../LatestMatch'
 
 import MatchCard from '../MatchCard'
 
+import PieChartOf from '../PiechartOf'
+
 import './index.css'
 
 class TeamMatches extends Component {
@@ -74,6 +76,11 @@ class TeamMatches extends Component {
     )
   }
 
+  goBackToHome = () => {
+    const {history} = this.props
+    history.replace('/')
+  }
+
   getBackgroundcolor = () => {
     const {match} = this.props
 
@@ -106,15 +113,20 @@ class TeamMatches extends Component {
   renderComponent = () => {
     const {teammatch} = this.state
 
-    const {latestMatchDetails, teamBannerUrl} = teammatch
+    const {latestMatchDetails, teamBannerUrl, recentMatches} = teammatch
+    console.log(latestMatchDetails)
     return (
       <div className={`teammatch-container ${this.getBackgroundcolor()}`}>
+        <button type="button" onClick={this.goBackToHome}>
+          Back
+        </button>
         <img src={teamBannerUrl} alt="team banner" className="teamBanner-img" />
         <h1 className="Latest-heading">Latest Matches</h1>
         <div>
           <LatestMatch latestmatch={latestMatchDetails} />
           {this.renderRecentMatches()}
         </div>
+        <PieChartOf recentMatches={recentMatches} />
       </div>
     )
   }
